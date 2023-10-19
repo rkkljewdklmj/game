@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 40f;
     bool jump = false;
     bool crouch = false;
-
+ 
     
     void Update()
     {
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("IsJumping", true);
+            animator.SetBool("IsFalling", true);
+
+
         }
         if (Input.GetButtonDown("Crouch"))
         {
@@ -32,16 +36,23 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+        if (jump == true)
+        {
+            animator.SetBool("IsFalling", true);
 
+        }
     }
 
     public void OnLanding ()
     {
         animator.SetBool("IsJumping", false);
+        animator.SetBool("IsFalling", false);
     }
 
 
-     void FixedUpdate()
+    
+
+    void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
