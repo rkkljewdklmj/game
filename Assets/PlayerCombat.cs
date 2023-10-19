@@ -12,13 +12,20 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     public int attackDamage = 40;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Time.time >= nextAttackTime)
         {
-            Attack();
-        }  
+                if (Input.GetKeyDown(KeyCode.E))
+           {
+              Attack();
+              nextAttackTime = Time.time + 1f / attackRate;
+           }  
+        }
+      
     }
 
     void Attack()
