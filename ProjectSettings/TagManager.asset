@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameController
-  - Collectable
+  - GameManager
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Ground
   - Player
   - Enemy
-  - Collectable
+  - Collectible
   - 
   - 
   - 

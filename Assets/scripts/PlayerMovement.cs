@@ -13,7 +13,23 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 40f;
     bool jump = false;
     bool crouch = false;
- 
+    private GameManager GameManager;
+    
+    void Start()
+        {
+            GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+
+    private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "Coin")
+            {
+                GameManager.CollectibleCounter += 1;
+                Destroy(other.gameObject);
+                Debug.Log("Player has collected a coin!");
+            }
+        }
+
     
     void Update()
     {
@@ -58,4 +74,6 @@ public class PlayerMovement : MonoBehaviour
         jump = false;
 
     }
+
+
 }
