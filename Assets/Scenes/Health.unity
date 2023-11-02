@@ -199,7 +199,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 186494602}
   - component: {fileID: 186494604}
   - component: {fileID: 186494603}
-  - component: {fileID: 186494605}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -302,19 +301,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186494601}
   m_CullTransparentMesh: 1
---- !u!114 &186494605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186494601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a28e3884ed31942b91327cec0fd35f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
 --- !u!1 &770453766
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  animator: {fileID: 0}
   healthBar: {fileID: 1944167949}
 --- !u!1 &771878354
 GameObject:
@@ -677,7 +664,7 @@ GameObject:
   - component: {fileID: 1944167948}
   - component: {fileID: 1944167949}
   m_Layer: 5
-  m_Name: Healthbar
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,7 +740,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 48.5
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -766,7 +753,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944167946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a28e3884ed31942b91327cec0fd35f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a8045b652faaa04f9f03148c69ad2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1944167948}
