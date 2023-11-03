@@ -8,7 +8,12 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public Animator animator;
     public HealthBar healthBar;
-
+    public GameObject deathEffect;
+	
+	
+	
+   
+    
     void Start()
     {
        health = maxHealth;
@@ -17,9 +22,16 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
       health -= damage;
+     
+      healthBar.SetHealth(health);
+      
       if(health <= 0)
       {
-         Destroy(gameObject);
+         if(gameObject != null)
+         {
+          Destroy(gameObject);
+          // reload game
+         }
       }
     }
    
